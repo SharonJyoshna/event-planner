@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gather - Celebration &amp; Event Planner</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<a class="skip" href="#form">Skip to planner</a>
+<main>
+<section class="hero" aria-labelledby="title">
+  <div class="copy">
+    <p class="eyebrow">A little magic, a lot less stress</p>
+    <h1 id="title">Your moment.<br>Beautifully planned.</h1>
+    <p class="lead">From the first big idea to the tiniest finishing touch, plan a wedding, birthday or community event with a budget, timeline and vendor checklist.</p>
+    <div class="actions">
+      <a class="btn primary" href="#form">Plan my celebration</a>
+      <button class="btn ghost" type="button" id="sample">Try sample details</button>
+    </div>
+  </div>
+  <div class="orb" aria-hidden="true">
+    <svg viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7c6d6"/><stop offset="1" stop-color="#8b3d66"/></linearGradient></defs>
+    <circle cx="100" cy="100" r="80" fill="url(#g)"/><circle cx="78" cy="78" r="26" fill="#fff4c9" opacity=".9"/>
+    <path d="M165 30l5 14 14 5-14 5-5 14-5-14-14-5 14-5z" fill="#fff4c9"/><path d="M30 150l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#fff4c9"/></svg>
+  </div>
+</section>
+
+<form id="form" class="card" aria-describedby="status">
+  <h2>Tell us about your event</h2>
+  <div class="grid">
+    <div><label for="event_type">Event type</label>
+    <select id="event_type" required>
+      <option value="wedding">Wedding</option><option value="birthday">Birthday</option><option value="community">Community event</option>
+    </select></div>
+    <div><label for="date">Event date</label><input id="date" type="date"></div>
+    <div><label for="budget">Budget (any currency)</label><input id="budget" type="number" min="1" required></div>
+    <div><label for="guests">Number of guests</label><input id="guests" type="number" min="1" max="10000" required></div>
+  </div>
+  <label for="notes">Preferences (theme, food, venue)</label>
+  <textarea id="notes" maxlength="500" rows="3"></textarea>
+  <button class="btn primary solid" type="submit">Create my plan</button>
+  <p id="status" role="status" aria-live="polite"></p>
+</form>
+
+<section id="plan" class="results" tabindex="-1" aria-label="Your event plan" hidden></section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
